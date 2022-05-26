@@ -1,0 +1,21 @@
+const router = require('express').Router();
+const userRouter = require('./users');
+const authRouter = require('./auth');
+const auth = require('../middlewares/authHandler');
+const corsRequestValidate = require('../middlewares/cors');
+const NotFoundErr = require('../errors/not-found-err');
+
+router.use(corsRequestValidate);
+router.use('/', authRouter);
+router.use(auth);
+// router.use('/', userRouter);
+router.use((req, res, next) => {
+  next(new NotFoundErr());
+})
+module.exports = router;
+
+
+/* GET home page. */
+// router.get('/', function(req, res, next) {
+//   res.render('index', { title: 'Express' });
+// });
