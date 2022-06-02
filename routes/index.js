@@ -5,10 +5,6 @@ const auth = require('../middlewares/authHandler');
 const corsRequestValidate = require('../middlewares/cors');
 const NotFoundErr = require('../errors/not-found-err');
 
-
-// router.get("/", (req, res) => {
-//   res.json({ message: "Welcome to my application." });
-// });
 router.use(corsRequestValidate);
 router.use('/', authRouter);
 // router.use(auth);
@@ -17,9 +13,3 @@ router.use((req, res, next) => {
   next(new NotFoundErr('Запрашиваемый ресурс не найден'));
 })
 module.exports = router;
-
-
-/* GET home page. */
-// router.get('/', function(req, res, next) {
-//   res.render('index', { title: 'Express' });
-// });
