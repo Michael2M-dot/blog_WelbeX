@@ -4,6 +4,7 @@ module.exports = {
   PASSWORD: "password",
   DB: "welbex",
   dialect: "postgres",
+  PORT: 3306,
   pool: {
     max: 5,
     min: 0,

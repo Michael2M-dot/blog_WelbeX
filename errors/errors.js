@@ -5,8 +5,8 @@ module.exports.AUTH_ERROR_CODE = 401;
 module.exports.RESOURCE_NOT_FOUND_CODE = 404;
 module.exports.DEFAULT_ERROR_CODE = 500;
 
-module.exports.RESOURCE_NOT_FOUND = 'DocumentNotFoundError';
-module.exports.VALIDATION_ERROR = 'ValidationError';
+// module.exports.RESOURCE_NOT_FOUND = 'DocumentNotFoundError';
+module.exports.VALIDATION_ERROR = 'SequelizeValidationError';
 
 // тексты ошибок для user
 module.exports.errWrongEmailOrPassword = 'Ошибка. Неверный email или пароль!';
@@ -23,4 +23,4 @@ module.exports.errPasswordMinLengthError = 'Ошибка. Поле password не
 module.exports.errWrongToken = 'Ошибка. Не верный токен. Необходимо авторизоваться!';
 module.exports.errTokenEmpty = 'Ошибка. Токен не пришел. Необходимо авторизоваться!';
 
-// module.exports.ERROR_MESSAGE = (err) => Object.values(err.errors).map((error) => error.message).join(', ');
+module.exports.ERROR_MESSAGE = (err) => Object.values(err.errors).map((error) => error.message).join(', ');

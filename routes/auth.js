@@ -6,13 +6,18 @@ const {
   logout
 } = require('../controllers/users');
 
+
+router.get("/", (req, res) => {
+  res.json({ message: "Welcome to my application." });
+});
+
 // регистрация пользователя
 router.post('/signup', createUser);
 
-// авторизация пользователя
+// // авторизация пользователя
 // router.post('/signin', login);
-
-// выход из приложения
+//
+// // выход из приложения
 // router.post('/signout', auth, logout);
 
 module.exports = router;
